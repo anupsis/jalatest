@@ -185,7 +185,7 @@
     <script>
       var APP_URL = {!! json_encode(url('/')) !!}
       var map;
-      var paths="m -90 -20 v 40 h 170 v -40 h -170 ";
+      // var paths="m -90 -20 v 40 h 170 v -40 h -170 ";
       var regions;
       var markers=[];
       var lat =parseFloat('{{$location->lat}}'),
@@ -223,7 +223,7 @@
                             position: new google.maps.LatLng(e.results[0].geometry.location),
                             map: map,
                             icon: {
-                              path: paths,
+                              path: "m 100 -20 h -180 v 40 h 180 z l 0 40 m -110 0 c 0 0 0 0 50 0 l -55 15",
                               fillColor: '#0080ff',
                               fillOpacity: .8,
                               strokeWeight: 1,
