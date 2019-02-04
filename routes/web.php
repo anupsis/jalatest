@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ShrimpList@index');
+
+Route::get('/shrimp_price/{id}','ShrimpPrice@index');
+Route::get('/rekomendasi/{id}','ShrimpPrice@rekomendasi');
+// Route::get('/province/{province_name}','ShrimpPrice@provinces');
