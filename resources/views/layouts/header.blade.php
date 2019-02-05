@@ -7,8 +7,8 @@
         <title>
             Pricelist Jala
         </title>
-        <link href="{{url('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{url('assets/main.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('assets/main.css')}}" rel="stylesheet" type="text/css"/>
         
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
