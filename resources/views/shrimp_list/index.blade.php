@@ -216,6 +216,10 @@
         $.each(regions,function(e,obj){
 
             $.ajax({
+                headers: {
+                      "accept": "application/json",
+                      "Access-Control-Allow-Origin":"*"
+                },
                 url:'https://maps.googleapis.com/maps/api/geocode/json?address='+obj.name+'&key=AIzaSyA38N74y_xGwSV0bI_36OIXDdH-corZO5A',
                 success:function(e){
                     if(e.status == 'OK'){

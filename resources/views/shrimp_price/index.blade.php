@@ -227,6 +227,10 @@
       var crd = {lat: pos.coords.latitude, lng: pos.coords.longitude};
       toastr.info('mencari data rekomendasi');
       $.ajax({
+          headers: {
+                  "accept": "application/json",
+                  "Access-Control-Allow-Origin":"*"
+            },
           url:'https://maps.googleapis.com/maps/api/geocode/json?latlng='+crd.lat+','+crd.lng+'&sensor=false&key=AIzaSyA38N74y_xGwSV0bI_36OIXDdH-corZO5A&result_type=administrative_area_level_1',
           success:function(e){
               if(e.status=='OK'){
@@ -243,6 +247,10 @@
                 $('#plain_container').attr('hidden','hidden');
 
                 $.ajax({
+                    headers: {
+                          "accept": "application/json",
+                          "Access-Control-Allow-Origin":"*"
+                    },
                     url:APP_URL+"/rekomendasi/"+name,
                     dataType:'json',
                     success:function(res){
