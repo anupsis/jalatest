@@ -3,12 +3,21 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    #add this on public/.htaccess for Laravel
+    # force https untuk hosting di heroku
     RewriteEngine On
 
-    #add this on public/.htaccess for Laravel
+    # If we receive a forwarded http request from a proxy...
+    RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
+
+    # ...or just a plain old http request directly from the client
+    RewriteCond %{HTTP:X-Forwarded-Proto} =""
     RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP:X-Forwarded-Proto} !https 
+
+    # Redirect to https version
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Put the rest of your rewrite rules here
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
